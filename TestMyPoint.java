@@ -91,11 +91,21 @@ public class TestMyPoint {
         assertEquals(p9.getY(), 10d, 0.001);
     }
 
+    @Test
+    public void testMiddle(){
+        MyPoint p8 = new MyPoint(3, 5);
+        MyPoint p9 = new MyPoint(5,7);
+        MyPoint p10 = p8.getMiddlePoint(p9);
+        assertEquals(p10.getX(), 4d, 0.001);
+        assertEquals(p10.getY(), 6d, 0.001);
+    }
+
 
     @Test(expected = IllegalArgumentException.class)
     public void testHorizontalSymmetryNull() {
         MyPoint p10 = new MyPoint(2, 3);
         MyPoint p11 = p10.horizontalSymmetry(null);
+        //should not reach here
     }
 
     @Test
